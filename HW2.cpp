@@ -21,7 +21,6 @@ int sortarray(int* arr, int size)
 	for (int i = 0; i < size - 1; ++i) {
 		for (int j = 0; j < size - i - 1; ++j) {
 			if (arr[j] < arr[j + 1]) {
-				// Обмен элементов
 				int temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
@@ -54,7 +53,7 @@ int Divide(int a, int b)
 
 int fullarray2(int* arr, int size) {
 	for (int i = 0; i < size; ++i) {
-		std::cout << "Элемент " << i + 1 << ": ";
+		std::cout << "ГќГ«ГҐГ¬ГҐГ­ГІ " << i + 1 << ": ";
 		std::cin >> arr[i];
 	}
 	return 0;
@@ -135,9 +134,9 @@ int main() {
 	/*task 6*/
 
 	int k = 0;
-	std::cout << "Введите количество k:\n";
+	std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® k:\n";
 	std::cin >> k;
-	std::cout << "Введите количество элементов массива:\n";
+	std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¬Г Г±Г±ГЁГўГ :\n";
 	int size;
 	std::cin >> size;
 	int* arr = new int[size];
@@ -156,7 +155,7 @@ int main() {
 	/*task 7*/
 
 	int n7;
-	std::cout << "Enter the length: "; //длина массива
+	std::cout << "Enter the length: "; //Г¤Г«ГЁГ­Г  Г¬Г Г±Г±ГЁГўГ 
 	std::cin >> n7;
 
 	if (n7 < 1) {
@@ -165,15 +164,15 @@ int main() {
 	}
 
 	int* nums7 = new int[n];
-	fullarray(nums7, n7); //заполнение массива
+	fullarray(nums7, n7); 
 
-	int lucky7 = 0; //инициализация нужного элемента
-	int count7 = 0; // счетчик
+	int lucky7 = 0; 
+	int count7 = 0; 
 	int majorityElement7 = -1;
-	for (int i = 0; i < n; i++) { //перебор основных элементов
+	for (int i = 0; i < n; i++) { 
 		count7 = 0;
-		for (int j = 0; j < n; j++) { //перебор элементов с которыми сравниваем
-			for (int k = 0; k < n; k++) { //перебор для нового массива
+		for (int j = 0; j < n; j++) { 
+			for (int k = 0; k < n; k++) { 
 				if ((nums7[i] == nums7[j]) && (nums7[k] != nums7[i])) {
 					count7 = count7 + 1;
 				}
@@ -188,19 +187,19 @@ int main() {
 
 	}
 
-	if (majorityElement7 != -1) { //вывод результата на экран
+	if (majorityElement7 != -1) { 
 		std::cout << "The largest lucky number: " << majorityElement7 << std::endl;
 	}
 	else {
 		std::cout << "The largest lucky number not found." << std::endl;
 	}
 
-	delete[] nums7; //освобождение памяти
+	delete[] nums7; 
 
 	/*task 8*/
 
-	int n8; //инициализация длины
-	int element8 = 0; //инициализация нужного элемента
+	int n8; 
+	int element8 = 0; 
 	std::cout << "Enter the length: ";
 	std::cin >> n8;
 	if (n8 < 1) {
@@ -208,10 +207,10 @@ int main() {
 		return 1;
 	}
 	int* nums8 = new int[n];
-	fullarray(nums8, n8); //заполнение массива
-	sortarray(nums8, n8); //сортировка массивоа
+	fullarray(nums8, n8); 
+	sortarray(nums8, n8);
 	int key8 = nums8[0], c8 = 0;
-	for (int i = 0; i < n8; i++) //нахождение наибольшего элемента
+	for (int i = 0; i < n8; i++) 
 	{
 		if (c8 == 0)
 			key8 = nums8[i];
@@ -221,7 +220,7 @@ int main() {
 	}
 	std::cout << "the majority element: " << key8 << std::endl;
 
-	delete[] nums8; //освобождение памяти
+	delete[] nums8; 
 
 	return 0;
 }
