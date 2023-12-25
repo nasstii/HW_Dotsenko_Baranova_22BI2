@@ -90,20 +90,22 @@ int main() {
 
 	int a = 0;
 	int b = 0;
-	char operation;
+	bool start = true;
+	char operation = 0;
+
 
 	int (*PtrFnc)(int, int) = nullptr;
 
 
-	do {
-		std::cout << "Enter the a ";
-		std::cin >> a;
-		std::cout << "Enter the b ";
-		std::cin >> b;
-		std::cout << "Enter the operation ";
-		std::cin >> operation;
+	while (start) {
+	std::cout << "Enter the a ";
+	std::cin >> a;
+	std::cout << "Enter the b ";
+	std::cin >> b;
+	std::cout << "Enter the operation ";
+	std::cin >> operation;
 
-		switch (operation) {
+	switch (operation) {
 		case '+':
 			PtrFnc = Add;
 			break;
@@ -118,18 +120,19 @@ int main() {
 				PtrFnc = Divide;
 			}
 			else {
-				std::cout << "division by zero. mistake" << std::endl;
+				std::cout << "Close!" << std::endl;
 			}
 			break;
 		default:
-			if (operation != ' ') {
-				std::cout << "Error: incorrect operation!" << std::endl;
-			}
-			break;
+			std::cout << "Calculator finnished, bye." << std::endl;
+			start = false;
 		}
-		std::cout << PtrFnc(a, b);
-
-	} while (operation != ' ');
+		if (start)
+		{
+		std::cout << PtrFnc(a, b) << std::endl;
+		}
+	
+	}
 
 	/*task 6*/
 
